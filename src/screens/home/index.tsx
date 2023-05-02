@@ -1,5 +1,6 @@
 import { FontAwesome5 } from '@expo/vector-icons';
 import axios from 'axios';
+import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { Alert, Keyboard } from 'react-native';
 import { HelpText } from '../../components/HelpText/view';
@@ -50,6 +51,7 @@ export const Home = () => {
 
     return (
         <Styled.Container>
+            <StatusBar style='dark' />
             <Styled.TextArea>
                 {searchResponse ?
                     <ResponseArea response={searchResponse} />
