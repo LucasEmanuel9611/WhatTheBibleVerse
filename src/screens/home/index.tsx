@@ -53,21 +53,23 @@ export const Home = () => {
                     <Styled.HelpText
                         typing={1}
                         initialDelay={1}
-                    >{isLoading ? "Aguarde..." : 'Digite algo sobre o versículo que você quer encontrar'}
+                    >{isLoading ? "Aguarde..." : 'Digite algo sobre o versículo que você deseja encontrar'}
                     </Styled.HelpText>
                 }
             </Styled.ReponseArea>
             <Styled.SeachArea>
-                <Styled.SearchField>
-                    <Styled.SearchInput value={searchTerm} onChangeText={(e) => setSearchTerm(e)} placeholder='Qual o versiculo que fala sobre...' />
-                    <Styled.SearchButton onPress={() => buscarVersiculos(searchTerm)} >
-                        <FontAwesome5 name="search" size={20} color="#f7fafc" />
-                    </Styled.SearchButton>
-                </Styled.SearchField>
-                {searchResponse &&
+
+                {searchResponse ?
                     <Styled.DeleteButton onPress={clearSearch}>
                         <FontAwesome5 name="trash" size={20} color="#f7fafc" />
                     </Styled.DeleteButton>
+                    :
+                    <Styled.SearchField>
+                        <Styled.SearchInput value={searchTerm} onChangeText={(e) => setSearchTerm(e)} placeholder='Qual o versiculo que fala sobre...' />
+                        <Styled.SearchButton onPress={() => buscarVersiculos(searchTerm)} >
+                            <FontAwesome5 name="search" size={20} color="#f7fafc" />
+                        </Styled.SearchButton>
+                    </Styled.SearchField>
                 }
             </Styled.SeachArea>
         </Styled.Container>
