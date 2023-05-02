@@ -28,10 +28,10 @@ export const SearchField = styled.View`
 `;
 
 export const TextArea = styled.ScrollView`
-  flex: 1;
   margin-top: 60px;
-  padding: 100px 5px;
+  padding: 0px 8px;
   width: 100%;
+  height: 100%;
 `;
 
 export const SearchButton = styled.TouchableOpacity`
