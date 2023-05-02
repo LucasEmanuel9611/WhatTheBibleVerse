@@ -2,6 +2,8 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import axios from 'axios';
 import { useState } from 'react';
 import { Alert, Keyboard } from 'react-native';
+import { HelpText } from '../../components/HelpText/view';
+import { ResponseArea } from '../../components/ResponseArea/view';
 import * as Styled from "./styles";
 
 export const Home = () => {
@@ -48,17 +50,14 @@ export const Home = () => {
 
     return (
         <Styled.Container>
-            <Styled.ReponseArea>
-                {searchResponse ? <Styled.ResponseText>{searchResponse}</Styled.ResponseText> :
-                    <Styled.HelpText
-                        typing={1}
-                        initialDelay={1}
-                    >{isLoading ? "Aguarde..." : 'Digite algo sobre o versículo que você deseja encontrar'}
-                    </Styled.HelpText>
+            <Styled.TextArea>
+                {searchResponse ?
+                    <ResponseArea response={searchResponse} />
+                    :
+                    <HelpText isLoading={isLoading} />
                 }
-            </Styled.ReponseArea>
-            <Styled.SeachArea>
-
+            </Styled.TextArea>
+            <Styled.SearchArea>
                 {searchResponse ?
                     <Styled.DeleteButton onPress={clearSearch}>
                         <FontAwesome5 name="trash" size={20} color="#f7fafc" />
@@ -71,7 +70,7 @@ export const Home = () => {
                         </Styled.SearchButton>
                     </Styled.SearchField>
                 }
-            </Styled.SeachArea>
+            </Styled.SearchArea>
         </Styled.Container>
     );
 }

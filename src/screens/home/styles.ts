@@ -1,15 +1,13 @@
-import Typewriter from "react-native-typewriter";
 import styled from "styled-components/native";
 
 export const Container = styled.View`
   flex: 1;
   background-color: #f7fafc;
-  /* background-color: red; */
   align-items: center;
   justify-content: flex-end;
 `;
 
-export const SeachArea = styled.View`
+export const SearchArea = styled.View`
   width: 100%;
   height: 150px;
   padding: 10px;
@@ -17,7 +15,6 @@ export const SeachArea = styled.View`
 
 export const SearchInput = styled.TextInput`
   width: 85%;
-  /* background-color: red; */
 `;
 
 export const SearchField = styled.View`
@@ -30,23 +27,10 @@ export const SearchField = styled.View`
   padding: 5px;
 `;
 
-export const HelpText = styled(Typewriter)`
-  font-size: 18px;
-  color: #1a202c;
-  font-weight: 500;
-`;
-
-export const ResponseText = styled.Text`
-  font-size: 18px;
-  color: #1a202c;
-  font-weight: 500;
-  text-align: justify;
-`;
-
-export const ReponseArea = styled.ScrollView`
+export const TextArea = styled.ScrollView`
   flex: 1;
   margin-top: 60px;
-  padding: 100px 15px;
+  padding: 100px 5px;
   width: 100%;
 `;
 
