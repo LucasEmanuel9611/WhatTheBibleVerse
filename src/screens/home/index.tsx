@@ -17,7 +17,7 @@ export const Home = () => {
     const buscarVersiculos = async (verseDescription: string) => {
         setIsLoading(true);
         axios.post('https://api.openai.com/v1/chat/completions', {
-            messages: [{ role: "user", content: `Qual o versículo que fala algo sobre ${verseDescription.trim()} apenas um trecho curto` }],
+            messages: [{ role: "user", content: `Qual o versículo da Bíblia com as seguintes características: ${verseDescription.trim()}. Se possível cite apenas um trecho curto e cite a versão` }],
             temperature: 0.5,
             max_tokens: 100,
             top_p: 1,
