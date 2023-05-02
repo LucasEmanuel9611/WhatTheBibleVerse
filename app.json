@@ -11,7 +11,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
@@ -20,14 +22,14 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.lucasemanuel9611.WhatTheBibleVerse"
+      "package": "com.lucasemanuel9611.Qualoversiculo"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "31347f40-23a2-4076-8424-2d52b72496d2"
+        "projectId": "c26d14c5-073a-4519-8ca3-2d90dfea6299"
       }
     }
   }
