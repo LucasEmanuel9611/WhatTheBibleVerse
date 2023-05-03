@@ -6,6 +6,7 @@ import { Alert, Keyboard } from 'react-native';
 import { HelpText } from '../../components/HelpText/view';
 import { ResponseArea } from '../../components/ResponseArea/view';
 import * as Styled from "./styles";
+import { API_KEY } from '@env'
 
 export const Home = () => {
 
@@ -13,10 +14,10 @@ export const Home = () => {
     const [searchResponse, setSearchResponse] = useState<string | null>(null);
     const [isLoading, setIsLoading] = useState(false);
 
-    const API_KEY = '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';
 
     const buscarVersiculos = async (verseDescription: string) => {
         setIsLoading(true);
+        console.log(API_KEY);
         axios.post('https://api.openai.com/v1/chat/completions', {
             messages: [{ role: "user", content: `Qual o versículo da Bíblia com as seguintes características: ${verseDescription.trim()}. Se possível cite apenas um trecho curto e cite a versão` }],
             temperature: 0.5,
