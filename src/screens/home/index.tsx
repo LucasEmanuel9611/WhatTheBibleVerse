@@ -16,7 +16,6 @@ export const Home = () => {
 
     const buscarVersiculos = async (verseDescription: string) => {
         setIsLoading(true);
-        console.log(API_KEY);
         axios.post('https://api.openai.com/v1/chat/completions', {
             messages: [{ role: "user", content: `Qual o versículo da Bíblia com as seguintes características: ${verseDescription.trim()}. Se possível cite apenas um trecho curto e cite a versão` }],
             temperature: 0.5,
@@ -33,7 +32,6 @@ export const Home = () => {
         })
             .then(res => {
                 Keyboard.dismiss()
-                console.log(res.data.choices[0].message.content)
                 setSearchResponse(res.data.choices[0].message.content)
             })
             .catch(error => {
