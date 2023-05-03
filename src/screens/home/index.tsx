@@ -9,7 +9,6 @@ import * as Styled from "./styles";
 import { API_KEY } from '@env'
 
 export const Home = () => {
-
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResponse, setSearchResponse] = useState<string | null>(null);
     const [isLoading, setIsLoading] = useState(false);
