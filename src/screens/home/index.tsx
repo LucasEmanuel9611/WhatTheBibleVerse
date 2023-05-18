@@ -8,6 +8,7 @@ import { ResponseArea } from '../../components/ResponseArea/view';
 import * as Styled from "./styles";
 import { API_KEY, ADS_BANNER_ID } from '@env'
 import { BannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads';
+import api from '../../libs/axios';
 
 export const Home = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -18,7 +19,7 @@ export const Home = () => {
 
     const buscarVersiculos = async (verseDescription: string) => {
         setIsLoading(true);
-        axios.post('https://api.openai.com/v1/chat/completions', {
+        api.post('/v1/chat/completions', {
             messages: [{ role: "user", content: `Qual o versículo da Bíblia com as seguintes características: ${verseDescription.trim()}. Se possível cite apenas um trecho curto e cite a versão` }],
             temperature: 0.5,
             max_tokens: 100,
@@ -26,11 +27,6 @@ export const Home = () => {
             frequency_penalty: 0,
             presence_penalty: 0,
             model: "gpt-3.5-turbo",
-        }, {
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${API_KEY}`
-            }
         })
             .then(res => {
                 Keyboard.dismiss()
