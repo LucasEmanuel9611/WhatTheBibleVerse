@@ -1,3 +1,23 @@
-apy-key="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"
+<h1 align="center">Qual o versículo ?</h1>
 
-, backgroundColor: theme.COLORS.GRAY_600
+<hr></hr>
+
+### Objetivo:
+
+    A Aplicação tem como objetivo buscar por versículos bílicos através da descrição de detalhes.
+
+## Inciar a aplicação
+
+### Build:
+
+```Bash
+eas build --platform android --profile development
+```
+
+Após o build faça a instalação e inicie com o seguinte comando:
+
+### Iniciar servidor de desenvolvimento:
+
+```Bash
+expo start --dev-client
+```
