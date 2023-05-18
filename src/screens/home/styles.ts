@@ -50,3 +50,9 @@ export const DeleteButton = styled.TouchableOpacity`
   border-radius: 8px;
   margin-top: 8px;
 `;
+
+export const AdContainer = styled.View`
+  width: 100%;
+  margin-top: 10px;
+  align-items: center;
+`;

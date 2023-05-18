@@ -6,7 +6,7 @@ const { Navigator, Screen } = createNativeStackNavigator();
 export function AppRoutes() {
     return (
         <Navigator screenOptions={{ headerShown: false }}>
-            <Screen name="groups" component={Home} />
+            <Screen name="home" component={Home} />
         </Navigator>
     );
 }

@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Qual o versículo ?",
-    "slug": "Qual-o-versiculo",
+    "slug": "WhatTheBibleVerse",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -11,11 +11,10 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.lucasemanuel9611.Qualoversiculo"
     },
     "android": {
       "adaptiveIcon": {
@@ -29,8 +28,11 @@
     },
     "extra": {
       "eas": {
-        "projectId": "c26d14c5-073a-4519-8ca3-2d90dfea6299"
+        "projectId": "31347f40-23a2-4076-8424-2d52b72496d2"
       }
     }
+  },
+  "react-native-google-mobile-ads": {
+    "android_app_id": "ca-app-pub-7040044978190528~8528404620"
   }
 }

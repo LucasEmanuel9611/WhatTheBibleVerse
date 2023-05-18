@@ -6,13 +6,15 @@ import { Alert, Keyboard } from 'react-native';
 import { HelpText } from '../../components/HelpText/view';
 import { ResponseArea } from '../../components/ResponseArea/view';
 import * as Styled from "./styles";
-import { API_KEY } from '@env'
+import { API_KEY, ADS_BANNER_ID } from '@env'
+import { BannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads';
 
 export const Home = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResponse, setSearchResponse] = useState<string | null>(null);
     const [isLoading, setIsLoading] = useState(false);
 
+    const adUnitId = __DEV__ ? TestIds.BANNER : ADS_BANNER_ID;
 
     const buscarVersiculos = async (verseDescription: string) => {
         setIsLoading(true);
@@ -35,7 +37,7 @@ export const Home = () => {
                 setSearchResponse(res.data.choices[0].message.content)
             })
             .catch(error => {
-                Alert.alert(error.message ?? error);
+                Alert.alert(error.message ?? JSON.stringify(error));
                 return null;
             }).finally(() => {
                 setIsLoading(false);
@@ -49,7 +51,7 @@ export const Home = () => {
 
     return (
         <Styled.Container>
-            <StatusBar style='dark' />
+            <StatusBar style='auto' />
             <Styled.TextArea>
                 {searchResponse ?
                     <ResponseArea response={searchResponse} />
@@ -70,6 +72,15 @@ export const Home = () => {
                         </Styled.SearchButton>
                     </Styled.SearchField>
                 }
+                <Styled.AdContainer>
+                    <BannerAd
+                        unitId={adUnitId}
+                        size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
+                        requestOptions={{
+                            requestNonPersonalizedAdsOnly: true,
+                        }}
+                    />
+                </Styled.AdContainer>
             </Styled.SearchArea>
         </Styled.Container>
     );
