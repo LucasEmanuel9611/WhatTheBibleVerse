@@ -21,3 +21,5 @@ Após o build faça a instalação e inicie com o seguinte comando:
 ```Bash
 expo start --dev-client
 ```
+
+⚠️ É necessário adicionar as variaveis de configuração no arquivo .env API_KEY a chave de acesso da api da openai, ADS_BANNER_ID que deve ser gerado no site do google admob ⚠️
